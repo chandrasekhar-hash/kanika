@@ -190,6 +190,15 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.page-header select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radii-chip);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-body);
+  background: var(--color-background);
 }
 
 .topbar {
@@ -638,6 +647,14 @@ img {
   display: flex;
   align-items: center;
   gap: var(--space-2);
+}
+
+.toolbar-actions select {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radii-chip);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-small);
+  background: var(--color-background);
 }
 
 .chart-toolbar {
