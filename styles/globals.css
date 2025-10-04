@@ -391,6 +391,10 @@ img {
   transition: transform var(--transition-short), box-shadow var(--transition-short);
 }
 
+.metric-card--interactive {
+  cursor: pointer;
+}
+
 .metric-card:hover {
   transform: scale(1.03);
   box-shadow: var(--shadow-card-hover);
