@@ -274,6 +274,13 @@ const AppShell = ({ children }) => {
           {children}
         </div>
       </main>
+      <ExportModal
+        isOpen={isExportOpen}
+        onClose={() => setIsExportOpen(false)}
+        onConfirm={handleExportConfirm}
+        selectedRepos={repoFilter}
+        timeframe={timeframe}
+      />
     </div>
   );
 };
