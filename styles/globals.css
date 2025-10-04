@@ -476,6 +476,30 @@ img {
   transition: transform var(--transition-short), box-shadow var(--transition-short), background var(--transition-short);
 }
 
+.leaderboard-cell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.leaderboard-cell.stat {
+  font-weight: 600;
+}
+
+.leaderboard-cell.badges {
+  overflow: hidden;
+}
+
+.leaderboard-cell.trend {
+  justify-content: center;
+}
+
+.leaderboard-cell.actions {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
 .leaderboard-row:hover {
   background: rgba(90, 74, 227, 0.08);
   transform: scale(1.02);
