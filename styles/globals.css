@@ -737,6 +737,36 @@ img {
   color: var(--color-text-muted);
 }
 
+.timeline-title {
+  margin: var(--space-2) 0;
+  font-size: var(--font-size-h3);
+  line-height: var(--font-line-h3);
+  font-weight: 600;
+}
+
+.timeline-description {
+  margin: 0 0 var(--space-3);
+  color: var(--color-text-muted);
+}
+
+.timeline-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: var(--font-size-small);
+}
+
+.timeline-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radii-chip);
+  background: rgba(16, 185, 129, 0.18);
+  color: var(--color-green);
+  font-weight: 600;
+}
+
 .timeline-meta {
   display: flex;
   justify-content: space-between;
