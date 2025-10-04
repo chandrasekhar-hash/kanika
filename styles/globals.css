@@ -552,6 +552,46 @@ img {
   box-shadow: 0 12px 22px rgba(15, 98, 254, 0.24);
 }
 
+.docs-update-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.docs-update-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radii-card);
+  padding: var(--space-4);
+  background: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform var(--transition-short), box-shadow var(--transition-short);
+}
+
+.docs-update-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 32px rgba(90, 74, 227, 0.2);
+}
+
+.docs-update-title {
+  margin: 0;
+  font-size: var(--font-size-h3);
+  line-height: var(--font-line-h3);
+  font-weight: 600;
+}
+
+.docs-update-summary {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.docs-update-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .activity-feed {
   display: flex;
   flex-direction: column;
