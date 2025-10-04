@@ -291,6 +291,20 @@ img {
   box-shadow: 0 14px 30px rgba(15, 98, 254, 0.28);
 }
 
+.export-fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radii-card);
+  padding: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.export-fieldset legend {
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
 .profile-menu {
   position: relative;
 }
