@@ -242,7 +242,12 @@ const AppShell = ({ children }) => {
                 ))}
               </select>
             </div>
-            <button type="button" className="export-button" aria-haspopup="dialog">
+            <button
+              type="button"
+              className="export-button"
+              aria-haspopup="dialog"
+              onClick={() => setIsExportOpen(true)}
+            >
               Export CSV
             </button>
             <div className="profile-menu" role="navigation" aria-label="Profile menu">
