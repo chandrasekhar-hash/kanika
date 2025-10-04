@@ -745,6 +745,16 @@ img {
   font-size: var(--font-size-small);
 }
 
+.timeline-link {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.timeline-link:hover {
+  color: var(--color-indigo);
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
