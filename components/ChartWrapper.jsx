@@ -32,15 +32,17 @@ const ChartWrapper = ({ title, description, legend = [], children, toolbar, acce
       </div>
       {legend.length > 0 && (
         <div className="chart-legend" role="list">
-          {legend.map((item) => (
-            <span key={item.label} className="legend-item" role="listitem">
-              <span
-                className="legend-swatch"
-                style={{ background: item.color, opacity: item.active === false ? 0.4 : 1 }}
-              />
-              <span>{item.label}</span>
-            </span>
-          ))}
+          {legend.map((item) => {
+            const normalizedColor = item.color.toLowerCase();
+            const colorClass = COLOR_CLASS_MAP[normalizedColor] ?? "legend-swatch--default";
+            const stateClass = item.active === false ? " legend-swatch--inactive" : "";
+            return (
+              <span key={item.label} className="legend-item" role="listitem">
+                <span className={`legend-swatch ${colorClass}${stateClass}`} />
+                <span>{item.label}</span>
+              </span>
+            );
+          })}
         </div>
       )}
     </section>
