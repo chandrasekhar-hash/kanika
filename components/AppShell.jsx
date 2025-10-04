@@ -115,6 +115,58 @@ const AppShell = ({ children }) => {
     return router.pathname.startsWith(href);
   }, [router.pathname]);
 
+  const handleExportConfirm = useCallback(async () => {
+    try {
+      const response = await fetch(`/api/mock/contributors?timeframe=${timeframe}`);
+      if (!response.ok) {
+        throw new Error("Failed to export CSV");
+      }
+      const payload = await response.json();
+      const fields = [
+        "name",
+        "handle",
+        "prs_reviewed",
+        "docs_updated",
+        "mentoring",
+        "issues_triaged",
+        "usage_impact",
+      ];
+      const header = [
+        "Name",
+        "Handle",
+        "PR Reviews",
+        "Docs Updates",
+        "Mentoring",
+        "Issues Triaged",
+        "Usage Impact",
+      ];
+      const rows = payload.contributors.map((contributor) =>
+        fields
+          .map((key) => {
+            const value = contributor[key];
+            if (typeof value === "string" && value.includes(",")) {
+              return `"${value}"`;
+            }
+            return value;
+          })
+          .join(",")
+      );
+      const csvContent = [header.join(","), ...rows].join("\n");
+      const blob = new Blob([csvContent], { type: "text/csv" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `maintainer-dashboard-${timeframe}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      setIsExportOpen(false);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [timeframe]);
+
   const sidebarClass = collapsed ? "sidebar collapsed" : "sidebar";
 
   const repoSummary = useMemo(() => repoFilter.join(", "), [repoFilter]);
