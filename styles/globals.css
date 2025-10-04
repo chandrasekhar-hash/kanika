@@ -458,7 +458,7 @@ img {
 .leaderboard-header,
 .leaderboard-row {
   display: grid;
-  grid-template-columns: 80px 220px repeat(4, minmax(100px, 1fr)) 140px;
+  grid-template-columns: 80px 240px repeat(4, minmax(100px, 1fr)) 220px 140px 200px;
   align-items: center;
   padding: var(--space-4) var(--space-5);
   background: var(--color-surface);
