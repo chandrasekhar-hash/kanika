@@ -111,7 +111,7 @@ function DocsUpdatesPage() {
               {highlight ? (
                 <div className="highlight-body">
                   <div className="contributor-identity">
-                    <img src={`/avatars/${highlight.handle}.png`} alt={`${highlight.name} avatar`} className="contributor-avatar" width="48" height="48" />
+                    <img src={highlight.avatar} alt={`${highlight.name} avatar`} className="contributor-avatar" width="48" height="48" />
                     <div className="contributor-copy">
                       <span className="contributor-name">{highlight.name}</span>
                       <span className="contributor-handle">@{highlight.handle}</span>
