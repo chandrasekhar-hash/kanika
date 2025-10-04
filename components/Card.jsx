@@ -30,19 +30,20 @@ const Card = ({
   const trendClassName = trend?.direction === "decrease" ? "trend-negative" : "trend-positive";
   const trendLabel = trend?.direction === "decrease" ? "Decrease" : "Increase";
 
+  const interactive = typeof onClick === "function";
+
   return (
     <article
-      className="metric-card"
-      role="button"
-      tabIndex={0}
-      onClick={onClick}
+      className={`metric-card${interactive ? " metric-card--interactive" : ""}`}
+      role={interactive ? "button" : "group"}
+      tabIndex={interactive ? 0 : undefined}
+      onClick={interactive ? onClick : undefined}
       onKeyDown={(event) => {
-        if (onClick && (event.key === "Enter" || event.key === " ")) {
+        if (interactive && (event.key === "Enter" || event.key === " ")) {
           event.preventDefault();
           onClick();
         }
       }}
-      aria-pressed="false"
       aria-label={`${title} card`}
     >
       <div className="card-header">
