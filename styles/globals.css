@@ -561,6 +561,60 @@ img {
   height: 40px;
 }
 
+.badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.badge-chip {
+  background: rgba(15, 98, 254, 0.12);
+  color: var(--color-primary);
+  border-radius: var(--radii-chip);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+}
+
+.compare-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-small);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.compare-checkbox input {
+  width: 20px;
+  height: 20px;
+}
+
+.row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.row-actions button {
+  border: none;
+  border-radius: var(--radii-chip);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-small);
+  background: rgba(90, 74, 227, 0.14);
+  color: var(--color-indigo);
+  cursor: pointer;
+  transition: transform var(--transition-short), box-shadow var(--transition-short);
+}
+
+.row-actions button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 22px rgba(90, 74, 227, 0.3);
+}
+
 .badge-icon {
   width: 72px;
   height: 72px;
