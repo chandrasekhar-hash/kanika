@@ -10,6 +10,15 @@ import React from "react";
  * @param {React.ReactNode} [props.toolbar]
  * @param {string} [props.accessibleSummary]
  */
+const COLOR_CLASS_MAP = {
+  "#0f62fe": "legend-swatch--primary",
+  "#5a4ae3": "legend-swatch--indigo",
+  "#10b981": "legend-swatch--green",
+  "#f59e0b": "legend-swatch--gold",
+  "#ef4444": "legend-swatch--danger",
+  "#6b7280": "legend-swatch--muted",
+};
+
 const ChartWrapper = ({ title, description, legend = [], children, toolbar, accessibleSummary }) => {
   return (
     <section className="chart-wrapper" aria-labelledby={`${title.replace(/\s+/g, "-").toLowerCase()}-heading`}>
