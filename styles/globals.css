@@ -507,6 +507,35 @@ img {
   z-index: 1;
 }
 
+.contributor-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.contributor-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(15, 98, 254, 0.18);
+  object-fit: cover;
+}
+
+.contributor-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contributor-name {
+  font-weight: 600;
+}
+
+.contributor-handle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
 .rank-medal {
   display: inline-flex;
   align-items: center;
