@@ -54,6 +54,7 @@ const AppShell = ({ children }) => {
     const params = new URLSearchParams(window.location.search);
     return params.get("timeframe") || "30d";
   });
+  const [isExportOpen, setIsExportOpen] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
