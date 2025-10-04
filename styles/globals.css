@@ -1091,6 +1091,23 @@ img {
   gap: var(--space-4);
 }
 
+.contributor-modal {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.contributor-modal-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.contributor-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: var(--space-4);
+}
+
 .side-panel {
   position: fixed;
   top: 0;
