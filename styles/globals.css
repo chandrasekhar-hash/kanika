@@ -443,6 +443,29 @@ img {
   gap: var(--space-4);
 }
 
+.highlight-card {
+  background: linear-gradient(145deg, rgba(15, 98, 254, 0.06), rgba(90, 74, 227, 0.08));
+}
+
+.highlight-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.highlight-metric {
+  margin: 0;
+  font-weight: 600;
+  display: flex;
+  gap: var(--space-1);
+  align-items: baseline;
+}
+
+.highlight-metric span {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-small);
+}
+
 .section-title {
   font-size: var(--font-size-h2);
   line-height: var(--font-line-h2);
