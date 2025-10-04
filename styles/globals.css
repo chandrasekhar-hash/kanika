@@ -180,6 +180,13 @@ img {
   gap: var(--space-4);
 }
 
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
 .metric-card {
   position: relative;
   background: var(--color-surface);
