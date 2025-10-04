@@ -1,16 +1,21 @@
 import React, { useMemo, useState } from "react";
 import { useRouter } from "next/router";
+import {
+  Area,
+  AreaChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import Card from "../components/Card";
 import ChartWrapper from "../components/ChartWrapper";
 import LeaderboardRow from "../components/LeaderboardRow";
 import TimelinePanel from "../components/TimelinePanel";
 import { useDashboardData } from "../hooks/useDashboardData";
-import {
-  aggregateKpis,
-  computeLeaderboard,
-  formatActivityForChart,
-} from "../lib/computations";
-import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { aggregateKpis, computeLeaderboard, formatActivityForChart } from "../lib/computations";
 
 const activityLegend = [
   { label: "PR Reviews", color: "#0F62FE" },
@@ -54,7 +59,7 @@ function DashboardPage() {
       return {
         id: `${entry.type}-${entry.date}-${entry.contributor}`,
         title: `${contributor?.name ?? "Contributor"} ${entry.type.replace("_", " ")}`,
-        summary: `${entry.count} updates`;
+        summary: `${entry.count} updates`,
       };
     });
   }, [data]);
@@ -121,9 +126,30 @@ function DashboardPage() {
                   <YAxis tick={{ fontSize: 12 }} />
                   <Tooltip />
                   <Legend />
-                  <Area type="monotone" dataKey="pr" stackId={stackMode === "stacked" ? "activity" : undefined} stroke="#0F62FE" fill="#0F62FE" fillOpacity={0.2} />
-                  <Area type="monotone" dataKey="docs" stackId={stackMode === "stacked" ? "activity" : undefined} stroke="#5A4AE3" fill="#5A4AE3" fillOpacity={0.2} />
-                  <Area type="monotone" dataKey="mentoring" stackId={stackMode === "stacked" ? "activity" : undefined} stroke="#10B981" fill="#10B981" fillOpacity={0.2} />
+                  <Area
+                    type="monotone"
+                    dataKey="pr"
+                    stackId={stackMode === "stacked" ? "activity" : undefined}
+                    stroke="#0F62FE"
+                    fill="#0F62FE"
+                    fillOpacity={0.2}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="docs"
+                    stackId={stackMode === "stacked" ? "activity" : undefined}
+                    stroke="#5A4AE3"
+                    fill="#5A4AE3"
+                    fillOpacity={0.2}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="mentoring"
+                    stackId={stackMode === "stacked" ? "activity" : undefined}
+                    stroke="#10B981"
+                    fill="#10B981"
+                    fillOpacity={0.2}
+                  />
                 </AreaChart>
               </ResponsiveContainer>
             </ChartWrapper>
