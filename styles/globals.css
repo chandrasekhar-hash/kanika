@@ -749,6 +749,22 @@ img {
   margin-bottom: var(--space-4);
 }
 
+.modal-close {
+  border: none;
+  background: rgba(15, 98, 254, 0.12);
+  color: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radii-chip);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-short), box-shadow var(--transition-short);
+}
+
+.modal-close:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 22px rgba(15, 98, 254, 0.25);
+}
+
 .modal-body {
   display: flex;
   flex-direction: column;
